@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no"><meta name="theme-color" content="#1b1038"><title>Cambrio</title><link rel="stylesheet" href="style.css?v=1"></head>
+<body>
+<header><a class="brand" href="./">Cam<span>brio</span><small>LE CAMBRIOLEUR MALIN</small></a><div class="money">💶 <b id="money">0</b></div></header>
+<nav aria-label="Navigation"><button class="active" data-tab="jouer">🕵️ <span>Cambrioler</span></button><button data-tab="mat">🎒 <span>Matériel</span></button><button data-tab="style">🎭 <span>Style</span></button></nav>
+<main>
+<section id="jouer" class="tab visible">
+ <div id="menu">
+  <div class="hero"><h1>Prêt pour un coup ?</h1><p class="fine">Une pièce différente à chaque fois : entre, vole ce que tu peux, évite les gardes, les chiens et les caméras, puis ressors par la porte.</p>
+   <div class="tier"><button id="tier-minus" class="secondary" aria-label="Moins difficile">−</button><div><small>Difficulté</small><b id="tier-n">1</b><span id="tier-info"></span></div><button id="tier-plus" class="secondary" aria-label="Plus difficile">+</button></div>
+   <button id="start" class="primary big">Cambrioler ! 🕵️</button></div>
+  <div class="how"><h2>Comment jouer</h2>
+   <ul><li>🕹️ <b>Glisse</b> le doigt (ou flèches / ZQSD) pour te déplacer. Doucement = <b>discret</b>, à fond = <b>bruyant</b>.</li><li>🧤 <b>Maintiens « Voler »</b> près d’un objet pour le prendre. Plus il est gros, plus c’est long et bruyant.</li><li>👀 Évite les <b>cônes de vision</b> des gardes 👮, des chiens 🐕 et des caméras 📷.</li><li>🔑 Un coffre ? Trouve le <b>post-it</b> avec le code, ou devine-le.</li><li>🚪 Ressors par la <b>porte verte</b> pour encaisser ton butin !</li></ul></div>
+  <div id="stats" class="stats"></div>
+ </div>
+ <div id="game" hidden>
+  <div class="hud"><button id="quit" class="secondary">✕ Abandonner</button><div class="hud-mid"><b id="h-title">Appartement</b><span id="h-tier"></span></div><div id="h-alarm" class="alarm" hidden>🚨 <b id="h-alarm-t">30</b> s</div></div>
+  <div class="hud2"><span id="h-bag" class="pill"></span><span id="h-codes" class="pill" hidden></span></div>
+  <div class="canvas-wrap" id="wrap"><canvas id="cv" width="1600" height="960"></canvas>
+   <div id="stick" class="stick" hidden><i></i></div>
+   <div class="btns"><button id="b-emp" class="round" hidden>📡<small id="b-emp-n"></small></button><button id="b-sneak" class="round">🤫<small>Discret</small></button><button id="b-act" class="round act">🧤<small id="b-act-l">Voler</small></button></div>
+   <div id="overlay" class="overlay-game" hidden></div></div>
+  <p class="fine kb">Clavier : flèches/ZQSD = bouger · Maj = discret · Espace/E (maintenir) = voler · Q = brouilleur</p>
+ </div>
+</section>
+<section id="mat" class="tab"><h1>Matériel</h1><p class="fine">Dépense ton butin pour devenir un meilleur voleur.</p><div id="ups" class="ups"></div></section>
+<section id="style" class="tab"><h1>Style</h1><div class="perso-grid"><div class="preview"><canvas id="pv" width="600" height="400"></canvas><p class="fine">Ton look de cambrioleur</p></div><div><div id="cats" class="chips"></div><div id="skins" class="skins"></div></div></div></section>
+</main>
+<div id="safe-dialog" class="dialog" hidden><div class="dlg-box"><h2>🔐 Coffre-fort</h2><p id="safe-info" class="fine"></p><div id="dials" class="dials"></div><p id="safe-fb" class="fb"></p><div class="ov-btns"><button id="safe-try" class="primary">Essayer</button><button id="safe-close" class="secondary">Fermer</button></div></div></div>
+<div id="toast" class="toast" hidden></div>
+<script type="module" src="script.js?v=1"></script>
+</body>
+</html>
